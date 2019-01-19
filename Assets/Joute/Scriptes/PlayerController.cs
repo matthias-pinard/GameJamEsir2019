@@ -7,7 +7,6 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private Animator animator;
     public float speed;
-    public float spearRange;
     public LayerMask layerMask;
     public KeyCode keyCode;
 
@@ -37,37 +36,41 @@ public class PlayerController : MonoBehaviour
         if(!swapped && !GetComponent<Renderer>().isVisible)
         {
             speed = -speed;
-            GetComponent<SpriteRenderer>().flipX = !GetComponent<SpriteRenderer>().flipX;
+            Flip();
             swapped = true;
         }
         if(swapped && GetComponent<Renderer>().isVisible)
         {
             swapped = false;
         }
-        //if(animator.GetBool("SpearDeployed"))
-        //{
-        //    Attack();
-        //}
     }
 
     IEnumerator DeploySpear()
     {
         animator.SetBool("SpearDeployed", true);
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.4f);
         Attack();
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1.0f);
         animator.SetBool("SpearDeployed", false);   
     }
 
     private void Attack()
     {
         Vector2 direction = new Vector2(speed, 0).normalized;
-        Vector2 position = new Vector2(rb.position.x + (GetComponent<CapsuleCollider2D>().size.x / 2 + 1) * direction.x, rb.position.y);
-        RaycastHit2D hit = Physics2D.Raycast(position, direction, spearRange, layerMask);
+        float capsuleSize = GetComponent<CapsuleCollider2D>().size.x;
+
+        float posX = rb.position.x + (capsuleSize / 2  + 0.3f)* direction.x;
+        Vector2 position = new Vector2(posX, rb.position.y);
+        RaycastHit2D hit = Physics2D.Raycast(position, direction, 0, layerMask);
         if(hit.collider != null)
         {
             JouteManager.instance.Win(this, hit.collider.GetComponent<PlayerController>());
             print("hit!");
         }
+    }
+
+    private void Flip()
+    {
+        rb.transform.localScale = new Vector2(-rb.transform.localScale.x, rb.transform.localScale.y);
     }
 }
