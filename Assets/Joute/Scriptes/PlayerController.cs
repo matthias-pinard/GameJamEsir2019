@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("SpearDeployed", true);
         yield return new WaitForSeconds(0.4f);
         Attack();
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(0.5f);
         animator.SetBool("SpearDeployed", false);   
     }
 

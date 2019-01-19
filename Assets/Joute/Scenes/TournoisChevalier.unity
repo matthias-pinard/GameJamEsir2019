@@ -436,7 +436,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: -5
-  spearRange: 1
   layerMask:
     serializedVersion: 2
     m_Bits: 256
@@ -657,7 +656,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  spearRange: 0
   layerMask:
     serializedVersion: 2
     m_Bits: 256
