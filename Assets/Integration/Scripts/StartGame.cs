@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class StartGame : MonoBehaviour
 {
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +14,9 @@ public class StartGame : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetKey("enter"))
+        {
+            GameController.instance.StartGame();
+        }
     }
 }
