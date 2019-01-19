@@ -11,12 +11,13 @@ public class ropeMove : MonoBehaviour {
     private float nextRope = 0.0f;
     private int countLeft = 0;
     private int countRight = 0;
-    private SpriteRenderer ropeSprite;
+    private BoxCollider2D ropeCollider;
+    private BoxCollider2D centerpointCollider;
 
     void Start()
     {
-        ropeSprite = gameObject.GetComponent<SpriteRenderer>() as SpriteRenderer;
-        
+        ropeCollider = gameObject.GetComponent<BoxCollider2D>() as BoxCollider2D;
+        centerpointCollider = centerPoint.GetComponent<BoxCollider2D>() as BoxCollider2D;
     }
 
     void Update()
@@ -52,13 +53,12 @@ public class ropeMove : MonoBehaviour {
             countRight = 0;
         }
 
-        SpriteRenderer ropeSprite = centerPoint.GetComponent<SpriteRenderer>() as SpriteRenderer;
-        float centerPointSize = ropeSprite.sprite.bounds.size.x;
+        float centerPointSize = centerpointCollider.size.x;
 
         float ropeScale = transform.localScale.x;
-        float ropeSize = ropeSprite.sprite.bounds.size.x * ropeScale;
+        float ropeSize = ropeCollider.size.x;
 
-        if (transform.position.x > ropeSize - centerPointSize/4)
+        if (transform.position.x > (centerPointSize + ropeSize) / 2)
         {
             Debug.Log("Right Win !");
             Destroy(secondRope.GetComponent<SpriteRenderer>());
@@ -66,7 +66,7 @@ public class ropeMove : MonoBehaviour {
             Destroy(this.GetComponent<SpriteRenderer>());
             Destroy(this);
         }
-        else if(transform.position.x < -(ropeSize - centerPointSize / 4))
+        else if(transform.position.x < -(centerPointSize + ropeSize) / 2)
         {
             Debug.Log("Left Win !");
             Destroy(secondRope.GetComponent<SpriteRenderer>());
