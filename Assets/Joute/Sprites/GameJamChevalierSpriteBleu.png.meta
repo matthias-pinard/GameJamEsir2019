@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 62ae49adde799774392b7389ecd6a7d3
+guid: 2cad3f92a7b81c842908a706fc7785e8
 TextureImporter:
   fileIDToRecycleName:
-    21300000: GameJamChevalierSprite_0
-    21300002: GameJamChevalierSprite_1
-    21300004: GameJamChevalierSprite_2
-    21300006: GameJamChevalierSprite_3
+    21300000: GameJamChevalierSpriteBleu_0
+    21300002: GameJamChevalierSpriteBleu_1
+    21300004: GameJamChevalierSpriteBleu_2
+    21300006: GameJamChevalierSpriteBleu_3
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -35,12 +35,12 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
-    aniso: -1
+    filterMode: -1
+    aniso: 1
     mipBias: -100
     wrapU: 1
     wrapV: 1
-    wrapW: 1
+    wrapW: -1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -67,7 +67,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -78,7 +78,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -88,7 +88,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GameJamChevalierSprite_0
+      name: GameJamChevalierSpriteBleu_0
       rect:
         serializedVersion: 2
         x: 14
@@ -96,19 +96,19 @@ TextureImporter:
         width: 51
         height: 61
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1c191032b194059479f63746386391b1
+      spriteID: 7ec2c0477c233164dbe87ecb0428f059
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GameJamChevalierSprite_1
+      name: GameJamChevalierSpriteBleu_1
       rect:
         serializedVersion: 2
         x: 74
@@ -116,19 +116,19 @@ TextureImporter:
         width: 51
         height: 61
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: da67906f02bb7c5438c1a69dadcba8ab
+      spriteID: 7cc777fcbc068394e93d8031da5fe3a9
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GameJamChevalierSprite_2
+      name: GameJamChevalierSpriteBleu_2
       rect:
         serializedVersion: 2
         x: 127
@@ -136,19 +136,19 @@ TextureImporter:
         width: 64
         height: 61
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d939339e926e7124dba7e444ad15ae0e
+      spriteID: 1e2f06eacd39f6149bf6a451d0423a72
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GameJamChevalierSprite_3
+      name: GameJamChevalierSpriteBleu_3
       rect:
         serializedVersion: 2
         x: 193
@@ -156,13 +156,13 @@ TextureImporter:
         width: 63
         height: 61
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 488ad9dd41a806c4ea7143eccd887e32
+      spriteID: a8ae3f85a9e251c488955126e05d2eb7
       vertices: []
       indices: 
       edges: []
@@ -170,7 +170,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: aabdc452bea1aa942b3fd7dc9cc1af83
+    spriteID: 77d46923729745d4583c1c0be12071bd
     vertices: []
     indices: 
     edges: []

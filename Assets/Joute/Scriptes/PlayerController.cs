@@ -7,7 +7,13 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private Animator animator;
     public float speed;
+    public float spearRange;
+    public LayerMask layerMask;
+    public KeyCode keyCode;
+
     private bool swapped;
+    private bool isAttacking;
+
 
     // Start is called before the first frame update
     void Start()
@@ -15,13 +21,16 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         rb.velocity = new Vector2(speed, 0);
+        Physics2D.IgnoreLayerCollision(8, 8);
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        rb.velocity = new Vector2(speed, 0);
-        if (Input.GetKey(KeyCode.S))
+        float posx = rb.position.x + (speed * Time.deltaTime);
+        float posy = rb.position.y;
+        rb.position = new Vector2(posx , posy);
+        if (Input.GetKey(keyCode))
         {
             StartCoroutine(DeploySpear());
         }
@@ -35,15 +44,30 @@ public class PlayerController : MonoBehaviour
         {
             swapped = false;
         }
-        print(rb.velocity.x);
+        //if(animator.GetBool("SpearDeployed"))
+        //{
+        //    Attack();
+        //}
     }
 
     IEnumerator DeploySpear()
     {
         animator.SetBool("SpearDeployed", true);
-        GetComponent<BoxCollider2D>().enabled = true;
-        yield return new WaitForSeconds(1);
-        GetComponent<BoxCollider2D>().enabled = false;
+        yield return new WaitForSeconds(0.3f);
+        Attack();
+        yield return new WaitForSeconds(0.5f);
         animator.SetBool("SpearDeployed", false);   
+    }
+
+    private void Attack()
+    {
+        Vector2 direction = new Vector2(speed, 0).normalized;
+        Vector2 position = new Vector2(rb.position.x + (GetComponent<CapsuleCollider2D>().size.x / 2 + 1) * direction.x, rb.position.y);
+        RaycastHit2D hit = Physics2D.Raycast(position, direction, spearRange, layerMask);
+        if(hit.collider != null)
+        {
+            JouteManager.instance.Win(this, hit.collider.GetComponent<PlayerController>());
+            print("hit!");
+        }
     }
 }
