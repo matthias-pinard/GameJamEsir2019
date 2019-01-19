@@ -14,9 +14,9 @@ public class StartGame : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey("enter"))
+        if(Input.GetKey(KeyCode.A))
         {
-            GameController.instance.StartGame();
+            GlobalController.instance.StartGame();
         }
     }
 }
