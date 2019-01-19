@@ -6,6 +6,7 @@ public class ropeMove : MonoBehaviour {
     public float speed = 1f;
     public float ropeRate = 0.2f;
     public GameObject centerPoint;
+    public GameObject secondRope;
 
     private float nextRope = 0.0f;
     private int countLeft = 0;
@@ -57,15 +58,19 @@ public class ropeMove : MonoBehaviour {
         float ropeScale = transform.localScale.x;
         float ropeSize = ropeSprite.sprite.bounds.size.x * ropeScale;
 
-        if (transform.position.x > ropeSize - centerPointSize/2)
+        if (transform.position.x > ropeSize - centerPointSize/4)
         {
             Debug.Log("Right Win !");
+            Destroy(secondRope.GetComponent<SpriteRenderer>());
+            Destroy(secondRope);
             Destroy(this.GetComponent<SpriteRenderer>());
             Destroy(this);
         }
-        else if(transform.position.x < -(ropeSize - centerPointSize / 2))
+        else if(transform.position.x < -(ropeSize - centerPointSize / 4))
         {
             Debug.Log("Left Win !");
+            Destroy(secondRope.GetComponent<SpriteRenderer>());
+            Destroy(secondRope);
             Destroy(this.GetComponent<SpriteRenderer>());
             Destroy(this);
         }
