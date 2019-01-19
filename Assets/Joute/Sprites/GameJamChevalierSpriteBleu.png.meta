@@ -1,5 +1,4 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 guid: 2cad3f92a7b81c842908a706fc7785e8
 TextureImporter:
   fileIDToRecycleName:
@@ -7,11 +6,6 @@ TextureImporter:
     21300002: GameJamChevalierSpriteBleu_1
     21300004: GameJamChevalierSpriteBleu_2
     21300006: GameJamChevalierSpriteBleu_3
-=======
-guid: 3a5af18e2f108524daeae45c7903f742
-TextureImporter:
-  fileIDToRecycleName: {}
->>>>>>> e1360972964fcc2e4003396963763986d577b24b
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -42,19 +36,15 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: -1
-    aniso: -1
+    aniso: 1
     mipBias: -100
     wrapU: 1
     wrapV: 1
-    wrapW: 1
+    wrapW: -1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-<<<<<<< HEAD
   spriteMode: 2
-=======
-  spriteMode: 1
->>>>>>> e1360972964fcc2e4003396963763986d577b24b
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -83,7 +73,6 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-<<<<<<< HEAD
   - serializedVersion: 2
     buildTarget: Standalone
     maxTextureSize: 2048
@@ -113,7 +102,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 26e381176b8607d499f262e7d5fe797b
+      spriteID: 7ec2c0477c233164dbe87ecb0428f059
       vertices: []
       indices: 
       edges: []
@@ -133,7 +122,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3994ea852800bd04baa2ac38b1f6ab3c
+      spriteID: 7cc777fcbc068394e93d8031da5fe3a9
       vertices: []
       indices: 
       edges: []
@@ -153,7 +142,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a2a45f24b922e404fab0890fcd62c302
+      spriteID: 1e2f06eacd39f6149bf6a451d0423a72
       vertices: []
       indices: 
       edges: []
@@ -173,7 +162,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0dffc359af45eef43aa3ca7d37cbdb59
+      spriteID: a8ae3f85a9e251c488955126e05d2eb7
       vertices: []
       indices: 
       edges: []
@@ -181,16 +170,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 2a51e45bba7563640afb8d9e69fed6b0
-=======
-  spriteSheet:
-    serializedVersion: 2
-    sprites: []
-    outline: []
-    physicsShape: []
-    bones: []
-    spriteID: 47f2dcd479f466540a60525aa72e6d0f
->>>>>>> e1360972964fcc2e4003396963763986d577b24b
+    spriteID: 77d46923729745d4583c1c0be12071bd
     vertices: []
     indices: 
     edges: []
