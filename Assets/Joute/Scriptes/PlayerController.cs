@@ -44,16 +44,18 @@ public class PlayerController : MonoBehaviour
         {
             swapped = false;
         }
-        if(animator.GetBool("SpearDeployed"))
-        {
-            Attack();
-        }
+        //if(animator.GetBool("SpearDeployed"))
+        //{
+        //    Attack();
+        //}
     }
 
     IEnumerator DeploySpear()
     {
         animator.SetBool("SpearDeployed", true);
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.3f);
+        Attack();
+        yield return new WaitForSeconds(0.5f);
         animator.SetBool("SpearDeployed", false);   
     }
 

@@ -35,6 +35,7 @@ public class JouteManager : MonoBehaviour
 
     public void Win(PlayerController winner, PlayerController loser)
     {
+        Destroy(loser.GetComponent<SpriteRenderer>());
         Destroy(loser);
     }
 }
