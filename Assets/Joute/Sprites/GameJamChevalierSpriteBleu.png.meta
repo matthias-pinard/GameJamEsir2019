@@ -1,4 +1,5 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 2cad3f92a7b81c842908a706fc7785e8
 TextureImporter:
   fileIDToRecycleName:
@@ -6,6 +7,11 @@ TextureImporter:
     21300002: GameJamChevalierSpriteBleu_1
     21300004: GameJamChevalierSpriteBleu_2
     21300006: GameJamChevalierSpriteBleu_3
+=======
+guid: 3a5af18e2f108524daeae45c7903f742
+TextureImporter:
+  fileIDToRecycleName: {}
+>>>>>>> e1360972964fcc2e4003396963763986d577b24b
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -44,7 +50,11 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
+<<<<<<< HEAD
   spriteMode: 2
+=======
+  spriteMode: 1
+>>>>>>> e1360972964fcc2e4003396963763986d577b24b
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -73,6 +83,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+<<<<<<< HEAD
   - serializedVersion: 2
     buildTarget: Standalone
     maxTextureSize: 2048
@@ -171,6 +182,15 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 2a51e45bba7563640afb8d9e69fed6b0
+=======
+  spriteSheet:
+    serializedVersion: 2
+    sprites: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 47f2dcd479f466540a60525aa72e6d0f
+>>>>>>> e1360972964fcc2e4003396963763986d577b24b
     vertices: []
     indices: 
     edges: []
