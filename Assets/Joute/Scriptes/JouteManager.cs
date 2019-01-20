@@ -7,7 +7,8 @@ public class JouteManager : MonoBehaviour
     public static JouteManager instance = null;
 
     enum Color  {blue, red};
-    public SpriteRenderer now;  
+    public SpriteRenderer now;
+    public SpriteRenderer wait;
 
     public void Awake()
     {
@@ -24,7 +25,6 @@ public class JouteManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -36,6 +36,7 @@ public class JouteManager : MonoBehaviour
     public void PrintNow(bool b)
     {
         now.enabled = b;
+        wait.enabled = !b;
     }
     //public void Win(PlayerController winner, PlayerController loser)
     //{
