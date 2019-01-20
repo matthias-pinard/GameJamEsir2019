@@ -221,6 +221,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textspace: {fileID: 1597237593}
+  texttitle: {fileID: 787214369}
+  limitSize: 7
 --- !u!4 &100468379
 Transform:
   m_ObjectHideFlags: 0
