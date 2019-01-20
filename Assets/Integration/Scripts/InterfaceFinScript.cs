@@ -17,7 +17,8 @@ public class InterfaceFinScript : MonoBehaviour
     {
         int globalScoreBlue = GlobalController.instance.GetGlobalScoreBlue();
         int globalScoreRed = GlobalController.instance.GetGlobalScoreRed();
-
+        Debug.Log(globalScoreBlue);
+        Debug.Log(globalScoreRed);
         if (globalScoreBlue > globalScoreRed)
         {
             joueurBleu.SetActive(true);
