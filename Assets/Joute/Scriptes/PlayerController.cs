@@ -7,7 +7,12 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private Animator animator;
     public float speed;
+    public LayerMask layerMask;
+    public KeyCode keyCode;
+
     private bool swapped;
+    private bool isAttacking;
+
 
     // Start is called before the first frame update
     void Start()
@@ -15,35 +20,57 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         rb.velocity = new Vector2(speed, 0);
+        Physics2D.IgnoreLayerCollision(8, 8);
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        rb.velocity = new Vector2(speed, 0);
-        if (Input.GetKey(KeyCode.S))
+        float posx = rb.position.x + (speed * Time.deltaTime);
+        float posy = rb.position.y;
+        rb.position = new Vector2(posx , posy);
+        if (Input.GetKey(keyCode))
         {
             StartCoroutine(DeploySpear());
         }
         if(!swapped && !GetComponent<Renderer>().isVisible)
         {
             speed = -speed;
-            GetComponent<SpriteRenderer>().flipX = !GetComponent<SpriteRenderer>().flipX;
+            Flip();
             swapped = true;
         }
         if(swapped && GetComponent<Renderer>().isVisible)
         {
             swapped = false;
         }
-        print(rb.velocity.x);
     }
 
     IEnumerator DeploySpear()
     {
         animator.SetBool("SpearDeployed", true);
-        GetComponent<BoxCollider2D>().enabled = true;
-        yield return new WaitForSeconds(1);
-        GetComponent<BoxCollider2D>().enabled = false;
+        yield return new WaitForSeconds(0.4f);
+        Attack();
+        yield return new WaitForSeconds(0.5f);
         animator.SetBool("SpearDeployed", false);   
+    }
+
+    private void Attack()
+    {
+        Vector2 direction = new Vector2(speed, 0).normalized;
+        float capsuleSize = GetComponent<CapsuleCollider2D>().size.x;
+
+        float posX = rb.position.x + (capsuleSize / 2  + 0.3f)* direction.x;
+        Vector2 position = new Vector2(posX, rb.position.y);
+        RaycastHit2D hit = Physics2D.Raycast(position, direction, 0, layerMask);
+        if(hit.collider != null)
+        {
+            JouteManager.instance.Win(this, hit.collider.GetComponent<PlayerController>());
+            print("hit!");
+        }
+    }
+
+    private void Flip()
+    {
+        rb.transform.localScale = new Vector2(-rb.transform.localScale.x, rb.transform.localScale.y);
     }
 }

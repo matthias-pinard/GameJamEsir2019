@@ -1,7 +1,11 @@
 fileFormatVersion: 2
-guid: 3a5af18e2f108524daeae45c7903f742
+guid: 2cad3f92a7b81c842908a706fc7785e8
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: GameJamChevalierSpriteBleu_0
+    21300002: GameJamChevalierSpriteBleu_1
+    21300004: GameJamChevalierSpriteBleu_2
+    21300006: GameJamChevalierSpriteBleu_3
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -32,15 +36,15 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: -1
-    aniso: -1
+    aniso: 1
     mipBias: -100
     wrapU: 1
     wrapV: 1
-    wrapW: 1
+    wrapW: -1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -69,13 +73,104 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: GameJamChevalierSpriteBleu_0
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 2
+        width: 51
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ec2c0477c233164dbe87ecb0428f059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameJamChevalierSpriteBleu_1
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 2
+        width: 51
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cc777fcbc068394e93d8031da5fe3a9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameJamChevalierSpriteBleu_2
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 2
+        width: 64
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e2f06eacd39f6149bf6a451d0423a72
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameJamChevalierSpriteBleu_3
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 2
+        width: 63
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8ae3f85a9e251c488955126e05d2eb7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 47f2dcd479f466540a60525aa72e6d0f
+    spriteID: 77d46923729745d4583c1c0be12071bd
     vertices: []
     indices: 
     edges: []
