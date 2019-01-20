@@ -8,6 +8,8 @@ public class ropeMove : MonoBehaviour {
     public GameObject centerPoint;
     public GameObject secondRope;
 
+    public InterfaceScript scoreInterface;
+
     private float nextRope = 0.0f;
     private int countLeft = 0;
     private int countRight = 0;
@@ -22,60 +24,63 @@ public class ropeMove : MonoBehaviour {
 
     void Update()
     {
-
-        Vector3 dp = new Vector3();
-
-        if (Input.GetKeyDown(KeyCode.Q))
+        if(scoreInterface.Started())
         {
-            countLeft++;
-        }
+            Vector3 dp = new Vector3();
 
-        if (Input.GetKeyDown(KeyCode.M))
-        {
-            countRight++;
-        }
-
-        if (Time.time > nextRope)
-        {
-            nextRope = Time.time + ropeRate;
-            if (countLeft > countRight)
+            if (Input.GetKeyDown(KeyCode.Q))
             {
-                dp.x -= speed;
-            }
-            else if (countLeft < countRight)
-            {
-                dp.x += speed;
+                countLeft++;
             }
 
-            transform.position += dp;
+            if (Input.GetKeyDown(KeyCode.M))
+            {
+                countRight++;
+            }
 
-            countLeft = 0;
-            countRight = 0;
+            if (Time.time > nextRope)
+            {
+                nextRope = Time.time + ropeRate;
+                if (countLeft > countRight)
+                {
+                    dp.x -= speed;
+                }
+                else if (countLeft < countRight)
+                {
+                    dp.x += speed;
+                }
+
+                transform.position += dp;
+
+                countLeft = 0;
+                countRight = 0;
+            }
+
+            float centerPointSize = centerpointCollider.size.x;
+
+            float ropeScale = transform.localScale.x;
+            float ropeSize = ropeCollider.size.x;
+
+            if (transform.position.x > (centerPointSize + ropeSize) / 2)
+            {
+                GlobalController.instance.IncRoundScoreRed();
+                //Debug.Log("Right Win !");
+                //Destroy(secondRope.GetComponent<SpriteRenderer>());
+                //Destroy(secondRope);
+                //Destroy(this.GetComponent<SpriteRenderer>());
+                //Destroy(this);
+            }
+            else if (transform.position.x < -(centerPointSize + ropeSize) / 2)
+            {
+                GlobalController.instance.IncRoundScoreBlue();
+                //Debug.Log("Left Win !");
+                //Destroy(secondRope.GetComponent<SpriteRenderer>());
+                //Destroy(secondRope);
+                //Destroy(this.GetComponent<SpriteRenderer>());
+                //Destroy(this);
+            }
         }
-
-        float centerPointSize = centerpointCollider.size.x;
-
-        float ropeScale = transform.localScale.x;
-        float ropeSize = ropeCollider.size.x;
-
-        if (transform.position.x > (centerPointSize + ropeSize) / 2)
-        {
-            GlobalController.instance.IncRoundScoreBlue();
-            //Debug.Log("Right Win !");
-            //Destroy(secondRope.GetComponent<SpriteRenderer>());
-            //Destroy(secondRope);
-            //Destroy(this.GetComponent<SpriteRenderer>());
-            //Destroy(this);
-        }
-        else if(transform.position.x < -(centerPointSize + ropeSize) / 2)
-        {
-            GlobalController.instance.IncRoundScoreBlue();
-            //Debug.Log("Left Win !");
-            //Destroy(secondRope.GetComponent<SpriteRenderer>());
-            //Destroy(secondRope);
-            //Destroy(this.GetComponent<SpriteRenderer>());
-            //Destroy(this);
-        }
+ 
 
     }
 }

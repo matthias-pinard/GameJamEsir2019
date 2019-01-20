@@ -28,9 +28,30 @@ public class GlobalController : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    public int GetRoundScoreBlue()
+    {
+        return roundScoreBlue;
+    }
+
+    public int GetRoundScoreRed()
+    {
+        return roundScoreRed;
+    }
+
+    public int GetGlobalScoreBlue()
+    {
+        return globalScoreBlue;
+    }
+
+    public int GetGlobalScoreRed()
+    {
+        return globalScoreRed;
+    }
 
     private void CheckState()
     {
+        Debug.Log(roundScoreBlue);
+        Debug.Log(roundScoreRed);
         if (roundScoreBlue == 3)
         {
             globalScoreBlue++;

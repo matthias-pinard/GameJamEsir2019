@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Maze_level/maze_scene.unity
     guid: f76a88f340ccae54f80fbc3ca36e4c1b
+  - enabled: 1
+    path: Assets/Integration/Scenes/EcranVictoire.unity
+    guid: 2ea444b0320f8824fb23ff6092f26933
   m_configObjects: {}
