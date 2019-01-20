@@ -78,6 +78,7 @@ public class PlayerControllerBlue : MonoBehaviour
     IEnumerator Win()
     {
         StartCoroutine("DeploySpear");
+        GetComponent<AudioSource>().Play();     
         Destroy(enemi.gameObject);
         GetComponent<Collider2D>().isTrigger = false;
         yield return new WaitForSeconds(3.0f);
