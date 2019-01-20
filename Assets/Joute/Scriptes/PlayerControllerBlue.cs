@@ -14,6 +14,7 @@ public class PlayerControllerBlue : MonoBehaviour
     private bool canAttack;
     private bool attackFailed;
     public GameObject enemi;
+    public InterfaceScript interf;
 
     public enum Color { blue, red};
     public Color color;
@@ -35,7 +36,7 @@ public class PlayerControllerBlue : MonoBehaviour
         float posx = tr.position.x + (speed * Time.deltaTime);
         float posy = tr.position.y;
         tr.position = new Vector2(posx , posy);
-        if (Input.GetKeyDown(keyCode))
+        if (Input.GetKeyDown(keyCode) && interf.Started())
         {
             if(canAttack && ! attackFailed)
             {
@@ -97,14 +98,17 @@ public class PlayerControllerBlue : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         canAttack = true;
-        JouteManager.instance.PrintNow(true);
-        }
+        if (interf.Started())
+        {
+            JouteManager.instance.PrintNow(true);
+
+         }
+}
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         canAttack = false;
         JouteManager.instance.PrintNow(false);
-        
     }
 
 }
