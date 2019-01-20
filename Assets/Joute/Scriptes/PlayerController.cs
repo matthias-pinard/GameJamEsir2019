@@ -13,13 +13,15 @@ public class PlayerController : MonoBehaviour
     private bool swapped;
     private bool isAttacking;
 
+    public enum Color { blue, red};
+    public Color color;
+
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        rb.velocity = new Vector2(speed, 0);
         Physics2D.IgnoreLayerCollision(8, 8);
     }
 
@@ -48,24 +50,32 @@ public class PlayerController : MonoBehaviour
     IEnumerator DeploySpear()
     {
         animator.SetBool("SpearDeployed", true);
+        
         yield return new WaitForSeconds(0.4f);
         Attack();
-        yield return new WaitForSeconds(0.5f);
-        animator.SetBool("SpearDeployed", false);   
+        yield return new WaitForSeconds(0.2f);
+        animator.SetBool("SpearDeployed", false);
     }
 
     private void Attack()
     {
         Vector2 direction = new Vector2(speed, 0).normalized;
+        print(direction);
         float capsuleSize = GetComponent<CapsuleCollider2D>().size.x;
 
-        float posX = rb.position.x + (capsuleSize / 2  + 0.3f)* direction.x;
+        float posX = rb.position.x + (capsuleSize / 2 + 0.3f) * direction.x;
         Vector2 position = new Vector2(posX, rb.position.y);
         RaycastHit2D hit = Physics2D.Raycast(position, direction, 0, layerMask);
-        if(hit.collider != null)
+        if (hit.collider != null)
         {
-            JouteManager.instance.Win(this, hit.collider.GetComponent<PlayerController>());
-            print("hit!");
+            if (color == Color.blue)
+            {
+                GlobalController.instance.IncRoundScoreBlue();
+            }
+            else if (color == Color.red)
+            {
+                GlobalController.instance.IncRoundScoreRed();
+            }
         }
     }
 
@@ -73,4 +83,5 @@ public class PlayerController : MonoBehaviour
     {
         rb.transform.localScale = new Vector2(-rb.transform.localScale.x, rb.transform.localScale.y);
     }
+
 }
