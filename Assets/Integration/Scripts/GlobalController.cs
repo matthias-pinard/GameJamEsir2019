@@ -62,6 +62,8 @@ public class GlobalController : MonoBehaviour
             globalScoreBlue++;
             numLevel++;
             roundScoreBlue = 0;
+            roundScoreRed = 0;
+
             GoTransition();
             return;
         }
@@ -71,6 +73,7 @@ public class GlobalController : MonoBehaviour
             globalScoreRed++;
             numLevel++;
             roundScoreRed = 0;
+            roundScoreBlue = 0;
             GoTransition();
             return;
         }
