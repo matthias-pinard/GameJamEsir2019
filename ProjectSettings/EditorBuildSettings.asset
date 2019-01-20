@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Integration/Scenes/EcranVictoire.unity
     guid: 2ea444b0320f8824fb23ff6092f26933
+  - enabled: 1
+    path: Assets/Integration/Scenes/EcranScoreGame.unity
+    guid: dccaa931721a9bc488d6a71c74f8fbe8
   m_configObjects: {}

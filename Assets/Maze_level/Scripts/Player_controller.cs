@@ -17,7 +17,9 @@ public class Player_controller : MonoBehaviour
     public int speed = 10;
     Rigidbody2D rb_player1;
     Rigidbody2D rb_player2;
-    
+
+    public InterfaceScript interf;
+
     IEnumerator BlueWon() {
         yield return new WaitForSecondsRealtime(1.5f);
         GlobalController.instance.IncRoundScoreBlue();
@@ -46,34 +48,42 @@ public class Player_controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float horizontal_p1 = Input.GetAxisRaw("Horizontal2");
-        float vertical_p1 = Input.GetAxisRaw("Vertical2");
-        Vector2 fVelocity_p1 = new Vector2(horizontal_p1, vertical_p1) * speed;
-        rb_player1.velocity = fVelocity_p1;
+        if(interf.Started())
+        {
+            float horizontal_p1 = Input.GetAxisRaw("Horizontal2");
+            float vertical_p1 = Input.GetAxisRaw("Vertical2");
+            Vector2 fVelocity_p1 = new Vector2(horizontal_p1, vertical_p1) * speed;
+            rb_player1.velocity = fVelocity_p1;
 
-        float horizontal_p2 = Input.GetAxisRaw("Horizontal");
-        float vertical_p2 = Input.GetAxisRaw("Vertical");
-        Vector2 fVelocity_p2 = new Vector2(horizontal_p2, vertical_p2) * speed;
-        rb_player2.velocity = fVelocity_p2;
+            float horizontal_p2 = Input.GetAxisRaw("Horizontal");
+            float vertical_p2 = Input.GetAxisRaw("Vertical");
+            Vector2 fVelocity_p2 = new Vector2(horizontal_p2, vertical_p2) * speed;
+            rb_player2.velocity = fVelocity_p2;
 
-        bool player1_check = Mathf.Abs(player1.transform.position.x - (mazeGenerator.Get_width())) <= 1.5f && Mathf.Abs(player1.transform.position.y - (mazeGenerator.Get_height())) <= 1.5f;
-        bool player2_check = Mathf.Abs(player2.transform.position.x - (mazeGenerator.Get_width())) <= 1.5f && Mathf.Abs(player2.transform.position.y - (mazeGenerator.Get_height())) <= 1.5f;
-        if (player1_check && !finishedGame) {
-            if (!GetComponent<AudioSource>().isPlaying) {
-                GetComponent<AudioSource>().Play();
+            bool player1_check = Mathf.Abs(player1.transform.position.x - (mazeGenerator.Get_width())) <= 1.5f && Mathf.Abs(player1.transform.position.y - (mazeGenerator.Get_height())) <= 1.5f;
+            bool player2_check = Mathf.Abs(player2.transform.position.x - (mazeGenerator.Get_width())) <= 1.5f && Mathf.Abs(player2.transform.position.y - (mazeGenerator.Get_height())) <= 1.5f;
+            if (player1_check && !finishedGame)
+            {
+                if (!GetComponent<AudioSource>().isPlaying)
+                {
+                    GetComponent<AudioSource>().Play();
+                }
+                winner = 1;
+                finishedGame = true;
+                StartCoroutine(BlueWon());
             }
-            winner = 1;
-            finishedGame = true;
-            StartCoroutine(BlueWon());
-        }
-        if (player2_check && !finishedGame) {
-            if (!GetComponent<AudioSource>().isPlaying) {
-                GetComponent<AudioSource>().Play();
+            if (player2_check && !finishedGame)
+            {
+                if (!GetComponent<AudioSource>().isPlaying)
+                {
+                    GetComponent<AudioSource>().Play();
+                }
+                winner = 2;
+                finishedGame = true;
+                StartCoroutine(RedWon());
             }
-            winner = 2;
-            finishedGame = true;
-            StartCoroutine(RedWon());
         }
+        
 
 
     }

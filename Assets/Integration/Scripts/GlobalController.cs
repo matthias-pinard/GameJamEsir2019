@@ -48,6 +48,11 @@ public class GlobalController : MonoBehaviour
         return globalScoreRed;
     }
 
+    public int GetNumLevel()
+    {
+        return numLevel;
+    }
+
     private void CheckState()
     {
         Debug.Log(roundScoreBlue);
@@ -57,6 +62,8 @@ public class GlobalController : MonoBehaviour
             globalScoreBlue++;
             numLevel++;
             roundScoreBlue = 0;
+            GoTransition();
+            return;
         }
 
         if (roundScoreRed == 3)
@@ -64,16 +71,12 @@ public class GlobalController : MonoBehaviour
             globalScoreRed++;
             numLevel++;
             roundScoreRed = 0;
+            GoTransition();
+            return;
         }
 
-        if (globalScoreBlue == 3 || globalScoreRed == 3)
-        {
-            ChangeLevel();
-        }
-        else
-        {
-            SceneManager.LoadScene(numLevel, LoadSceneMode.Single);
-        }
+        ChangeLevel();
+
     }
 
     public void IncRoundScoreBlue()
@@ -88,10 +91,15 @@ public class GlobalController : MonoBehaviour
         CheckState();
     }
 
-    private void ChangeLevel()
+    public void ChangeLevel()
     {
         SceneManager.LoadScene(numLevel, LoadSceneMode.Single);
    
+    }
+
+    private void GoTransition()
+    {
+        SceneManager.LoadScene(5, LoadSceneMode.Single);
     }
 
     public void StartGame()
