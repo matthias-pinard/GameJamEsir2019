@@ -17,6 +17,7 @@ public class Player_controller : MonoBehaviour
     public int speed = 10;
     Rigidbody2D rb_player1;
     Rigidbody2D rb_player2;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -50,12 +51,12 @@ public class Player_controller : MonoBehaviour
         if (player1_check && !finishedGame) {
             winner = 1;
             finishedGame = true;
-            Debug.Log("p1 WINS");
+            GlobalController.instance.IncRoundScoreBlue();
         }
         if (player2_check && !finishedGame) {
             winner = 2;
             finishedGame = true;
-            Debug.Log("p2 WINS");
+            GlobalController.instance.IncRoundScoreRed();
         }
 
 

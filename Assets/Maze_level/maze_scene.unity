@@ -264,6 +264,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wall: {fileID: 5908995029981141024, guid: e8198986280300546af38b4daff09496, type: 3}
   floor: {fileID: 3928708302857379024, guid: e75c2c9f1f3fbda42b8b7199220a0beb, type: 3}
+  cup: {fileID: 7799374822258326858, guid: cafb7a7787f34bc40b59adb22664d66b, type: 3}
   m_width: 14
   m_height: 10
 --- !u!4 &1874833360
