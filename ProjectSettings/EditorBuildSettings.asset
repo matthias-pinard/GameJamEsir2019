@@ -4,5 +4,17 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Integration/Scenes/EcranTitre.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Maze_level/maze_scene.unity
+    guid: f76a88f340ccae54f80fbc3ca36e4c1b
+  - enabled: 1
+    path: Assets/Joute/Scenes/TournoisChevalier.unity
+    guid: 8588a6de5aeda644c938845bdbb32f08
+  - enabled: 1
+    path: Assets/Shot Rope/Scenes/Shot_Rope_Scene.unity
+    guid: d4d04942bc53b254cbed2176a70b6983
   m_configObjects: {}
