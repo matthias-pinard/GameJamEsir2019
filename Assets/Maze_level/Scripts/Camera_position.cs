@@ -26,7 +26,7 @@ public class Camera_position : MonoBehaviour {
 
         //We leave some space for the UI by sliding the camera to the right on the x axis
         myCam.transform.position = new Vector3(mazeGenerator.Get_width() / 2.0f - 0.5f, mazeGenerator.Get_height() / 2.0f - 0.5f, -1.0f);
-        myCam.orthographicSize = cameraHeight/1.5f;
+        myCam.orthographicSize = cameraHeight/2.0f;
 
         //We need to adjust the FOV if the width is bigger than the height, because the screen ratio is 16:9, and the horizontal FOV isn't 60°
         if (totalMazeHeight <= totalMazeWidth ) {

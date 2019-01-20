@@ -159,6 +159,9 @@ MonoBehaviour:
     type: 3}
   player2_model: {fileID: 5325093252308758185, guid: 8aad85bbaed70a74fa5cd108181778ac,
     type: 3}
+  mazeGenerator: {fileID: 1874833359}
+  winner: 0
+  finishedGame: 0
   maze: {fileID: 1874833359}
   speed: 3
 --- !u!1 &1540734688
@@ -259,9 +262,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9cb3b88f09259a428cf2b84fc566aef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wall: {fileID: 152419731964492711, guid: 1ad2a0df287c7fc439306e3b8e8511e4, type: 3}
-  floor: {fileID: 525778123319202569, guid: 8ffeefbbb49093149a7770894866d135, type: 3}
-  m_width: 10
+  wall: {fileID: 5908995029981141024, guid: e8198986280300546af38b4daff09496, type: 3}
+  floor: {fileID: 3928708302857379024, guid: e75c2c9f1f3fbda42b8b7199220a0beb, type: 3}
+  m_width: 14
   m_height: 10
 --- !u!4 &1874833360
 Transform:
@@ -314,7 +317,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.8254717, g: 0.98852414, b: 1, a: 0}
+  m_BackGroundColor: {r: 0.11320752, g: 0.11320752, b: 0.11320752, a: 0}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
@@ -330,7 +333,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 11.75
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -373,5 +376,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mazeGenerator: {fileID: 1874833359}
-  Wall: {fileID: 152419731964492711, guid: 1ad2a0df287c7fc439306e3b8e8511e4, type: 3}
+  Wall: {fileID: 5908995029981141024, guid: e8198986280300546af38b4daff09496, type: 3}
   myCam: {fileID: 2142938699}

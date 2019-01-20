@@ -8,6 +8,10 @@ public class Player_controller : MonoBehaviour
     public GameObject player2_model;
     private GameObject player1;
     private GameObject player2;
+    public Maze_generator mazeGenerator;
+    
+    public int winner = 0;
+    public bool finishedGame = false;
 
     public Maze_generator maze;
     public int speed = 10;
@@ -20,8 +24,6 @@ public class Player_controller : MonoBehaviour
         Vector3 player1pos = new Vector3(0, -0.25f, 0);
         player1 = Instantiate(player1_model, player1pos, Quaternion.identity) as GameObject;
 
-        int height = maze.Get_height();
-        int width = maze.Get_width();
         Vector3 player2pos = new Vector3(-0.25f, 0, 0);
         player2 = Instantiate(player2_model, player2pos, Quaternion.identity) as GameObject;
 
@@ -43,6 +45,19 @@ public class Player_controller : MonoBehaviour
         Vector2 fVelocity_p2 = new Vector2(horizontal_p2, vertical_p2) * speed;
         rb_player2.velocity = fVelocity_p2;
 
-        //if(Input.GetKey(KeyCode.))
+        bool player1_check = Mathf.Abs(player1.transform.position.x - (mazeGenerator.Get_width())) <= 1.5f && Mathf.Abs(player1.transform.position.y - (mazeGenerator.Get_height())) <= 1.5f;
+        bool player2_check = Mathf.Abs(player2.transform.position.x - (mazeGenerator.Get_width())) <= 1.5f && Mathf.Abs(player2.transform.position.y - (mazeGenerator.Get_height())) <= 1.5f;
+        if (player1_check && !finishedGame) {
+            winner = 1;
+            finishedGame = true;
+            Debug.Log("p1 WINS");
+        }
+        if (player2_check && !finishedGame) {
+            winner = 2;
+            finishedGame = true;
+            Debug.Log("p2 WINS");
+        }
+
+
     }
 }
