@@ -10,9 +10,6 @@ public class AnimatorController : MonoBehaviour
     SpriteRenderer sprite;
     Quaternion lastRota;
 
-    //public AudioClip stepSound;
-    //private AudioSource source;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +17,6 @@ public class AnimatorController : MonoBehaviour
         anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
         Quaternion lastRota = Quaternion.Euler(0.0f, 0.0f, 0.0f);
-        //source = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -30,13 +26,15 @@ public class AnimatorController : MonoBehaviour
         if (rb.velocity.x == 0 && rb.velocity.y == 0) {
             anim.SetBool("isWalking", false);
             sprite.transform.rotation = lastRota;
-            //source.mute = true;
+
         }
         else {
             anim.SetBool("isWalking", true);
-            float vol = Random.Range(0.5f, 1.0f);
-            //source.mute = false;
-            //if(!source.isPlaying) source.PlayOneShot(stepSound, vol);
+
+            if (!GetComponent<AudioSource>().isPlaying) {
+                GetComponent<AudioSource>().Play();
+            }
+
             
             if (rb.velocity.x == 0 && rb.velocity.y > 0) {
                 sprite.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7336302026512189580}
   - component: {fileID: 6710734445525788427}
   - component: {fileID: 1981449194441948711}
-  - component: {fileID: 6402126078622199506}
+  - component: {fileID: 3326994028378792393}
   m_Layer: 0
   m_Name: player2
   m_TagString: Untagged
@@ -89,7 +89,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.000000059604645, y: -0.00000011920929}
+  m_Offset: {x: 0.00090515614, y: 0.0009050369}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -100,7 +100,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.19985116, y: 0.117925406}
+  m_Size: {x: 0.13106656, y: 0.078098536}
   m_EdgeRadius: 0
 --- !u!212 &6710734445525788427
 SpriteRenderer:
@@ -162,8 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c41c033eb192a7f419a92bddad372cec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stepSound: {fileID: 8300000, guid: 7f582f981c9ee4c4193bf12da68ccc6e, type: 3}
---- !u!82 &6402126078622199506
+--- !u!82 &3326994028378792393
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -174,9 +173,9 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7f582f981c9ee4c4193bf12da68ccc6e, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
+  m_PlayOnAwake: 0
+  m_Volume: 0.6
+  m_Pitch: 0.8
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -249,7 +248,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
