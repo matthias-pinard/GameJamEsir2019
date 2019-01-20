@@ -7,6 +7,7 @@ public class JouteManager : MonoBehaviour
     public static JouteManager instance = null;
     public GameObject player1;
     public GameObject player2;
+    enum Color  {blue, red};
 
     public void Awake()
     {

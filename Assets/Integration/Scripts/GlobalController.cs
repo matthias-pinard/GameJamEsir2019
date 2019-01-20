@@ -35,17 +35,23 @@ public class GlobalController : MonoBehaviour
         {
             globalScoreBlue++;
             numLevel++;
+            roundScoreBlue = 0;
         }
 
         if (roundScoreRed == 3)
         {
             globalScoreRed++;
             numLevel++;
+            roundScoreRed = 0;
         }
 
         if (globalScoreBlue == 3 || globalScoreRed == 3)
         {
             ChangeLevel();
+        }
+        else
+        {
+            SceneManager.LoadScene(numLevel, LoadSceneMode.Single);
         }
     }
 

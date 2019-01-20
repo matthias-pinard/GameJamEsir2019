@@ -16,6 +16,7 @@ public class Maze_generator : MonoBehaviour
 
     public GameObject wall;
     public GameObject floor;
+    public GameObject cup;
 
     public Cell[,] maze_grid;
     private GameObject allWalls;
@@ -127,10 +128,17 @@ public class Maze_generator : MonoBehaviour
                 
                 Vector3 floorPos = new Vector3(j, i, 0.5f);
                 GameObject tempFloor = Instantiate(floor, floorPos, Quaternion.identity) as GameObject;
+                if (i == m_height - 1 && j == m_width - 1) {
+                    Color col = new Color(1.0f,1.0f,0.0f);
+                    tempFloor.GetComponent<Renderer>().material.color = col;
+                    
+                    //maze_grid[i, j].eastWall.GetComponent<Renderer>().material.color = col;
+                    //maze_grid[i, j].northWall.GetComponent<Renderer>().material.color = col;
+                }
                 tempFloor.transform.parent = allFloorTiles.transform;
-               
             }
         }
+        Instantiate(cup, new Vector2(m_width - 1, m_height - 1), Quaternion.identity);
     }
 
     int[] ComputeNeighbours(int i, int j) {

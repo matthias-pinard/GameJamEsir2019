@@ -440,6 +440,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   keyCode: 115
+  color: 0
 --- !u!50 &1422756338
 Rigidbody2D:
   serializedVersion: 4
@@ -660,6 +661,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   keyCode: 107
+  color: 1
 --- !u!95 &1470994488
 Animator:
   serializedVersion: 3
