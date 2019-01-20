@@ -13,6 +13,9 @@ public class PlayerController : MonoBehaviour
     private bool swapped;
     private bool isAttacking;
 
+    public enum Color { blue, red};
+    public Color color;
+
 
     // Start is called before the first frame update
     void Start()
@@ -64,8 +67,14 @@ public class PlayerController : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(position, direction, 0, layerMask);
         if(hit.collider != null)
         {
-            JouteManager.instance.Win(this, hit.collider.GetComponent<PlayerController>());
-            print("hit!");
+            if(color == Color.blue)
+            {
+                GlobalController.instance.IncRoundScoreBlue();
+            }
+            else if(color == Color.red)
+            {
+                GlobalController.instance.IncRoundScoreRed();
+            }
         }
     }
 
