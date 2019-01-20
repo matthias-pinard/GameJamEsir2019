@@ -60,19 +60,21 @@ public class ropeMove : MonoBehaviour {
 
         if (transform.position.x > (centerPointSize + ropeSize) / 2)
         {
-            Debug.Log("Right Win !");
-            Destroy(secondRope.GetComponent<SpriteRenderer>());
-            Destroy(secondRope);
-            Destroy(this.GetComponent<SpriteRenderer>());
-            Destroy(this);
+            GlobalController.instance.IncRoundScoreBlue();
+            //Debug.Log("Right Win !");
+            //Destroy(secondRope.GetComponent<SpriteRenderer>());
+            //Destroy(secondRope);
+            //Destroy(this.GetComponent<SpriteRenderer>());
+            //Destroy(this);
         }
         else if(transform.position.x < -(centerPointSize + ropeSize) / 2)
         {
-            Debug.Log("Left Win !");
-            Destroy(secondRope.GetComponent<SpriteRenderer>());
-            Destroy(secondRope);
-            Destroy(this.GetComponent<SpriteRenderer>());
-            Destroy(this);
+            GlobalController.instance.IncRoundScoreBlue();
+            //Debug.Log("Left Win !");
+            //Destroy(secondRope.GetComponent<SpriteRenderer>());
+            //Destroy(secondRope);
+            //Destroy(this.GetComponent<SpriteRenderer>());
+            //Destroy(this);
         }
 
     }
