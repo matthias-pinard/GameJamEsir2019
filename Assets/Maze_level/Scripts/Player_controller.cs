@@ -49,11 +49,17 @@ public class Player_controller : MonoBehaviour
         bool player1_check = Mathf.Abs(player1.transform.position.x - (mazeGenerator.Get_width())) <= 1.5f && Mathf.Abs(player1.transform.position.y - (mazeGenerator.Get_height())) <= 1.5f;
         bool player2_check = Mathf.Abs(player2.transform.position.x - (mazeGenerator.Get_width())) <= 1.5f && Mathf.Abs(player2.transform.position.y - (mazeGenerator.Get_height())) <= 1.5f;
         if (player1_check && !finishedGame) {
+            if (!GetComponent<AudioSource>().isPlaying) {
+                GetComponent<AudioSource>().Play();
+            }
             winner = 1;
             finishedGame = true;
             GlobalController.instance.IncRoundScoreBlue();
         }
         if (player2_check && !finishedGame) {
+            if (!GetComponent<AudioSource>().isPlaying) {
+                GetComponent<AudioSource>().Play();
+            }
             winner = 2;
             finishedGame = true;
             GlobalController.instance.IncRoundScoreRed();
