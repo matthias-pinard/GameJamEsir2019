@@ -156,7 +156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   now: {fileID: 1068390094}
-  wait: {fileID: 0}
+  wait: {fileID: 185715134}
 --- !u!1 &185715133
 GameObject:
   m_ObjectHideFlags: 0
