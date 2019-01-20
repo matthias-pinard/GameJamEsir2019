@@ -5,9 +5,9 @@ using UnityEngine;
 public class JouteManager : MonoBehaviour
 {
     public static JouteManager instance = null;
-    public GameObject player1;
-    public GameObject player2;
+
     enum Color  {blue, red};
+    public SpriteRenderer now;  
 
     public void Awake()
     {
@@ -20,7 +20,6 @@ public class JouteManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        DontDestroyOnLoad(gameObject);
     }
     // Start is called before the first frame update
     void Start()
@@ -34,9 +33,13 @@ public class JouteManager : MonoBehaviour
         
     }
 
-    public void Win(PlayerController winner, PlayerController loser)
+    public void PrintNow(bool b)
     {
-        Destroy(loser.GetComponent<SpriteRenderer>());
-        Destroy(loser);
+        now.enabled = b;
     }
+    //public void Win(PlayerController winner, PlayerController loser)
+    //{
+    //    Destroy(loser.GetComponent<SpriteRenderer>());
+    //    Destroy(loser);
+    //}
 }

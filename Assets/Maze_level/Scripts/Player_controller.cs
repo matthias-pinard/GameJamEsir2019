@@ -18,6 +18,16 @@ public class Player_controller : MonoBehaviour
     Rigidbody2D rb_player1;
     Rigidbody2D rb_player2;
     
+    IEnumerator BlueWon() {
+        yield return new WaitForSecondsRealtime(1.5f);
+        GlobalController.instance.IncRoundScoreBlue();
+
+    }
+    IEnumerator RedWon() {
+        yield return new WaitForSecondsRealtime(1.5f);
+        GlobalController.instance.IncRoundScoreRed();
+    }
+
 
     // Start is called before the first frame update
     void Start()
@@ -54,7 +64,7 @@ public class Player_controller : MonoBehaviour
             }
             winner = 1;
             finishedGame = true;
-            GlobalController.instance.IncRoundScoreBlue();
+            StartCoroutine(BlueWon());
         }
         if (player2_check && !finishedGame) {
             if (!GetComponent<AudioSource>().isPlaying) {
@@ -62,7 +72,7 @@ public class Player_controller : MonoBehaviour
             }
             winner = 2;
             finishedGame = true;
-            GlobalController.instance.IncRoundScoreRed();
+            StartCoroutine(RedWon());
         }
 
 
