@@ -38,7 +38,7 @@ public class StartGame : MonoBehaviour
 
         
 
-        if(Input.GetKey(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space))
         {
             GlobalController.instance.StartGame();
         }

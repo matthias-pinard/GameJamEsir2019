@@ -107,9 +107,26 @@ public class GlobalController : MonoBehaviour
 
     public void StartGame()
     {
-        numLevel++;
+        globalScoreBlue = 0;
+        globalScoreRed = 0;
+        roundScoreBlue = 0;
+        roundScoreRed = 0;
+
+        numLevel = 1;
         ChangeLevel();
     }
+
+    public void RestartGame()
+    {
+        globalScoreBlue = 0;
+        globalScoreRed = 0;
+        roundScoreBlue = 0;
+        roundScoreRed = 0;
+
+        numLevel = 0;
+        ChangeLevel();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
